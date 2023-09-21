@@ -28,6 +28,13 @@ inquirer
             message: 'Please provide any testing information details.',
             name: 'tests',
         },
+        {
+            type: 'list',
+            message: 'Choose which license best applies to your project:',
+            name: 'badge',
+            choices: ['MIT', 'Apache', 'Unlicensed', 'GNU AGPLv3', 'GNU GPLv3', 'Mozilla Public License'],
+
+        },
     ])
 
     .then((responses) => {
@@ -43,19 +50,24 @@ inquirer
 
 function generateRead(input) {
     const readmeContent = `
-    # ${input.project}
+# <p align="center">Title: ${input.project}</p> <p align="center">![Static Badge](https://img.shields.io/badge/License-${input.badge}-blue)</p>
 
-    ${input.description}
+
+## Description
+${input.description}
     
+## Installation
     
-    ## Installation
+## Usage
+${input.usage} 
     
-    ## Usage
-    ${input.usage} 
+## Contributing
+${input.contribute}
     
-    ## Authors and Acknowledgment
-    
-    ## Project Status`
+## Tests
+
+## License Type
+`
 
     return readmeContent;
 

@@ -20,7 +20,7 @@ inquirer
         },
         {
             type: 'input',
-            message: 'Please provide instructions on how to contribute to this project.',
+            message: 'Please provide your github url',
             name: 'contribute',
         },
         {
@@ -32,7 +32,13 @@ inquirer
             type: 'list',
             message: 'Choose which license best applies to your project:',
             name: 'badge',
-            choices: ['MIT', 'Apache', 'Unlicensed', 'GNU AGPLv3', 'GNU GPLv3', 'Mozilla Public License'],
+            choices: ['MIT', 'Apache 2.0', 'Unlicensed', 'GNU AGPLv3', 'GNU GPLv3', 'Mozilla Public License'],
+
+        },
+        {
+            type: 'input',
+            message: 'Please add a link that goes to your license description ',
+            name: 'license',
 
         },
     ])
@@ -62,11 +68,12 @@ ${input.description}
 ${input.usage} 
     
 ## Contributing
-${input.contribute}
+To make contributions please follow the link to [Github Profile](${input.contribute})
     
 ## Tests
 
-## License Type
+## License
+For more information view the [${input.badge} LICENSE](${input.license}) link
 `
 
     return readmeContent;

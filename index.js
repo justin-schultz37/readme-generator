@@ -20,7 +20,7 @@ inquirer
         },
         {
             type: 'input',
-            message: 'Please provide your github url',
+            message: 'Please provide your github url:',
             name: 'contribute',
         },
         {
@@ -37,7 +37,7 @@ inquirer
         },
         {
             type: 'input',
-            message: 'Please add a link that goes to your license description ',
+            message: 'Please add a link that goes to your license description you can reference choosealicense.com. ',
             name: 'license',
 
         },
